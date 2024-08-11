@@ -1,6 +1,7 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -31,26 +32,41 @@ class BestSellerBookItem extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 30),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  child: Text(
-                    'The book of the jungle is a mystery',
-                    style: Styles.textStyle20.copyWith(
-                      fontFamily: kGtSectraFine,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    child: Text(
+                      'The book of the jungle is a mystery',
+                      style: Styles.textStyle20.copyWith(
+                        fontFamily: kGtSectraFine,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-                const SizedBox(height: 3),
-                const Text(
-                  'Charles Dickens',
-                  style: Styles.textStyle14,
-                )
-              ],
+                  const SizedBox(height: 3),
+                  const Text(
+                    'Charles Dickens',
+                    style: Styles.textStyle14,
+                  ),
+                  const SizedBox(height: 3),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '19.99 E',
+                        style: Styles.textStyle20.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const BookRating(),
+                    ],
+                  )
+                ],
+              ),
             )
           ],
         ),
