@@ -32,6 +32,7 @@ class BestSellerBookItem extends StatelessWidget {
             ),
             const SizedBox(width: 30),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
@@ -43,6 +44,11 @@ class BestSellerBookItem extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
+                ),
+                const SizedBox(height: 3),
+                const Text(
+                  'Charles Dickens',
+                  style: Styles.textStyle14,
                 )
               ],
             )
