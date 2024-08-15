@@ -6,11 +6,9 @@ class BestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        itemBuilder: (context, index) {
-          return const BestSellerBookItem();
-        },
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (context, index) => const BestSellerBookItem(),
       ),
     );
   }
