@@ -32,7 +32,6 @@ dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.7.0
-  get: ^4.6.6
   google_fonts: ^6.2.1
 
 dev_dependencies:
@@ -73,6 +72,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
 flutter_assets:
   assets_path: assets/images/
   output_path: lib/core/utils
