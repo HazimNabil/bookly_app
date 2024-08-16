@@ -14,6 +14,8 @@ class BookDetailsView extends StatelessWidget {
 
   AppBar buildAppBar() {
     return AppBar(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
       leading: IconButton(
         onPressed: () {},
         icon: const Icon(Icons.close),
@@ -21,7 +23,7 @@ class BookDetailsView extends StatelessWidget {
       actions: [
         IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.shopping_cart),
+          icon: const Icon(Icons.shopping_cart_outlined),
         )
       ],
     );
