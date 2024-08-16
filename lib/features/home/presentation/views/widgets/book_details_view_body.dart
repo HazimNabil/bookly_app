@@ -10,8 +10,9 @@ class BookDetailsViewBody extends StatelessWidget {
     return const Center(
       child: Column(
         children: [
+          SizedBox(height: 25),
           SizedBox(
-            height: 170,
+            height: 210,
             child: CustomBookImage(),
           ),
         ],
