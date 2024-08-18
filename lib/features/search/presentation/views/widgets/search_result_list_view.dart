@@ -12,7 +12,10 @@ class SearchResultListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.only(bottom: 12.0),
-            child: CustomBookImage(),
+            child: CustomBookImage(
+              imageUrl:
+                  'https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/07/attachment_78895234.png?auto=format&q=60&fit=max&w=930',
+            ),
           );
         },
       ),
