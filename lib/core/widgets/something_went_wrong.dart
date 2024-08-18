@@ -8,10 +8,12 @@ class SomethingWentWrong extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      errorMessage,
-      style: Styles.textStyle18.copyWith(
-        color: Colors.red,
+    return Center(
+      child: Text(
+        errorMessage,
+        style: Styles.textStyle18.copyWith(
+          color: Colors.red,
+        ),
       ),
     );
   }
