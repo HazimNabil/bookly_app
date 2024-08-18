@@ -1,13 +1,16 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/core/widgets/custom_book_image.dart';
+import 'package:bookly_app/features/home/data/models/book/book.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class NewestBookItem extends StatelessWidget {
-  const NewestBookItem({super.key});
+  final Book book;
+
+  const NewestBookItem({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -19,21 +22,7 @@ class NewestBookItem extends StatelessWidget {
           height: 120,
           child: Row(
             children: [
-              AspectRatio(
-                aspectRatio: 2.7 / 4,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.red,
-                    image: const DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage(
-                        Assets.imagesTestImage,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              CustomBookImage(imageUrl: book.volumeInfo.imageLinks.thumbnail),
               const SizedBox(width: 30),
               Expanded(
                 child: Column(
@@ -42,7 +31,7 @@ class NewestBookItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Text(
-                        'The book of the jungle is a mystery',
+                        book.volumeInfo.title!,
                         style: Styles.textStyle20.copyWith(
                           fontFamily: kGtSectraFine,
                         ),
@@ -51,8 +40,8 @@ class NewestBookItem extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 3),
-                    const Text(
-                      'Charles Dickens',
+                    Text(
+                      book.volumeInfo.authors![0],
                       style: Styles.textStyle14,
                     ),
                     const SizedBox(height: 3),
@@ -60,12 +49,15 @@ class NewestBookItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '19.99 E',
+                          'Free',
                           style: Styles.textStyle20.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const BookRating(),
+                        const BookRating(
+                          rating: 0,
+                          ratingsCount: 0,
+                        ),
                       ],
                     )
                   ],
