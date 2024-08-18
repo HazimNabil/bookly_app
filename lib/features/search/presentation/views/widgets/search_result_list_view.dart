@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../home/presentation/views/widgets/custom_book_image.dart';
+import '../../../../../core/widgets/custom_book_image.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
