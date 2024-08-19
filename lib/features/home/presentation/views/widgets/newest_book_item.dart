@@ -22,7 +22,7 @@ class NewestBookItem extends StatelessWidget {
           height: 120,
           child: Row(
             children: [
-              CustomBookImage(imageUrl: book.volumeInfo.imageLinks.thumbnail),
+              CustomBookImage(imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? ''),
               const SizedBox(width: 30),
               Expanded(
                 child: Column(
