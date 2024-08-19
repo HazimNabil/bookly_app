@@ -2,6 +2,7 @@ import 'package:bookly_app/features/home/presentation/manager/similar_books_cubi
 import 'package:bookly_app/features/home/presentation/views/widgets/book_details_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../data/models/book/book.dart';
 
@@ -35,7 +36,7 @@ class _BookDetailsViewState extends State<BookDetailsView> {
       backgroundColor: Colors.transparent,
       elevation: 0,
       leading: IconButton(
-        onPressed: () {},
+        onPressed: () => context.pop(),
         icon: const Icon(Icons.close),
       ),
       actions: [
