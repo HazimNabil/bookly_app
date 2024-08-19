@@ -1,21 +1,32 @@
-import 'package:bookly_app/core/utils/service_locator.dart';
-import 'package:bookly_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_app/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_details_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BookDetailsView extends StatelessWidget {
-  const BookDetailsView({super.key});
+import '../../data/models/book/book.dart';
+
+class BookDetailsView extends StatefulWidget {
+  final Book book;
+
+  const BookDetailsView({super.key, required this.book});
+
+  @override
+  State<BookDetailsView> createState() => _BookDetailsViewState();
+}
+
+class _BookDetailsViewState extends State<BookDetailsView> {
+  @override
+  void initState() {
+    super.initState();
+    var cubit = BlocProvider.of<SimilarBooksCubit>(context);
+    cubit.fetchSimilarBooks(widget.book.volumeInfo.categories![0]);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: BlocProvider(
-        create: (context) => SimilarBooksCubit(getIt.get<HomeRepoImpl>()),
-        child: const BookDetailsViewBody(),
-      ),
+      body: const BookDetailsViewBody(),
     );
   }
 
