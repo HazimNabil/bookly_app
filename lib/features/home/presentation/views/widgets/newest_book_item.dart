@@ -54,9 +54,9 @@ class NewestBookItem extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const BookRating(
-                          rating: 0,
-                          ratingsCount: 0,
+                         BookRating(
+                          rating: book.volumeInfo.averageRating ?? 0,
+                          ratingsCount: book.volumeInfo.ratingsCount ?? 0,
                         ),
                       ],
                     )
