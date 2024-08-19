@@ -16,7 +16,7 @@ class BookDetailsViewBody extends StatelessWidget {
           const SizedBox(height: 25),
           BookDetailsSection(book: book),
           const SizedBox(height: 37),
-          const BookAction(),
+          BookAction(previewUrl: book.volumeInfo.previewLink),
           const SizedBox(height: 70),
           const SimilarBooksSection(),
         ],
