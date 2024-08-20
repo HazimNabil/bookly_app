@@ -27,7 +27,7 @@ class FeaturedBooksListView extends StatelessWidget {
                   var thumbnail = state
                       .featuredBooks[index].volumeInfo.imageLinks?.thumbnail;
                   return GestureDetector(
-                    onTap: () => context.go(
+                    onTap: () => context.push(
                       AppRouter.kBookDetailsPath,
                       extra: state.featuredBooks[index],
                     ),

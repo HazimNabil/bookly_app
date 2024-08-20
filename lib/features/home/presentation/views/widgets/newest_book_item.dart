@@ -15,7 +15,7 @@ class NewestBookItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.go(AppRouter.kBookDetailsPath, extra: book),
+      onTap: () => context.push(AppRouter.kBookDetailsPath, extra: book),
       child: Padding(
         padding: const EdgeInsets.only(left: 16.0, top: 16),
         child: SizedBox(

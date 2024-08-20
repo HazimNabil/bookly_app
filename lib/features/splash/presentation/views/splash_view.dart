@@ -28,7 +28,7 @@ class _SplashViewState extends State<SplashView> {
   void navigateToHome() {
     Future.delayed(
       const Duration(seconds: 2),
-      () => context.replace(AppRouter.kHomePath),
+      () => context.go(AppRouter.kHomePath),
     );
   }
 }

@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget {
           children: [
             Image.asset(Assets.imagesLogo, height: 18),
             IconButton(
-              onPressed: () => context.go(AppRouter.kSearchPath),
+              onPressed: () => context.push(AppRouter.kSearchPath),
               icon: const Icon(
                 FontAwesomeIcons.magnifyingGlass,
                 size: 22,
