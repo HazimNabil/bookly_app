@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../data/models/book/book.dart';
+import '../../../../core/models/book/book.dart';
 
 class BookDetailsView extends StatefulWidget {
   final Book book;
