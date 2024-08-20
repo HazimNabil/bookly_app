@@ -8,13 +8,16 @@ class SearchResultListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.builder(
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        ),
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.only(bottom: 12.0),
             child: CustomBookImage(
               imageUrl:
-                  'https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/07/attachment_78895234.png?auto=format&q=60&fit=max&w=930',
+                  'http://books.google.com/books/content?id=_ZoWwQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
             ),
           );
         },
