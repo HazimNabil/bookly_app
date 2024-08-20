@@ -13,11 +13,11 @@ class BookDetailsViewBody extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          const SizedBox(height: 25),
+          const SizedBox(height: 15),
           BookDetailsSection(book: book),
-          const SizedBox(height: 37),
+          const SizedBox(height: 30),
           BookAction(previewUrl: book.volumeInfo.previewLink),
-          const SizedBox(height: 70),
+          const SizedBox(height: 40),
           const SimilarBooksSection(),
         ],
       ),

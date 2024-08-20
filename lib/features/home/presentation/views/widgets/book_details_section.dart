@@ -15,15 +15,16 @@ class BookDetailsSection extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 210,
+          height: 170,
           child: CustomBookImage(
             imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
           ),
         ),
-        const SizedBox(height: 40),
-         Text(
+        const SizedBox(height: 30),
+        Text(
           book.volumeInfo.title!,
-          style: Styles.textStyle30,
+          style: Styles.textStyle25,
+          textAlign: TextAlign.center,
         ),
         const SizedBox(height: 7),
         Opacity(
@@ -35,8 +36,8 @@ class BookDetailsSection extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 18),
-         BookRating(
+        const SizedBox(height: 12),
+        BookRating(
           rating: book.volumeInfo.averageRating ?? 0,
           ratingsCount: book.volumeInfo.ratingsCount ?? 0,
         )

@@ -16,7 +16,7 @@ class BookAction extends StatelessWidget {
         children: [
           const Expanded(
             child: SizedBox(
-              height: 48,
+              height: 45,
               child: CustomButton(
                 text: 'Free',
                 backgroundColor: Colors.white,
@@ -30,7 +30,7 @@ class BookAction extends StatelessWidget {
           ),
           Expanded(
             child: SizedBox(
-              height: 48,
+              height: 45,
               child: CustomButton(
                 text: getPreviewLabel(),
                 backgroundColor: Colors.orange,
