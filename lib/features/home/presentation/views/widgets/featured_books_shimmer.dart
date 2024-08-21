@@ -4,30 +4,30 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class FeaturedBooksShimmer extends StatelessWidget {
-  const FeaturedBooksShimmer({super.key});
+  final double heightRatio;
+
+  const FeaturedBooksShimmer({super.key, required this.heightRatio});
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Shimmer.fromColors(
-        baseColor: kShimmerBaseColor,
-        highlightColor: kShimmerHighlightColor,
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.25,
-          child: ListView.builder(
-            itemCount: 6,
-            padding: const EdgeInsets.only(left: 16),
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return const Padding(
-                padding: EdgeInsets.only(right: 8.0),
-                child: AspectRatio(
-                  aspectRatio: 2.7 / 4,
-                  child: Skelton(),
-                ),
-              );
-            },
-          ),
+    return Shimmer.fromColors(
+      baseColor: kShimmerBaseColor,
+      highlightColor: kShimmerHighlightColor,
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height * heightRatio,
+        child: ListView.builder(
+          itemCount: 6,
+          padding: const EdgeInsets.only(left: 16),
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return const Padding(
+              padding: EdgeInsets.only(right: 8.0),
+              child: AspectRatio(
+                aspectRatio: 2.7 / 4,
+                child: Skelton(),
+              ),
+            );
+          },
         ),
       ),
     );

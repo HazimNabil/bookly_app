@@ -19,7 +19,9 @@ class FeaturedBooksBuilder extends StatelessWidget {
             child: SomethingWentWrong(errorMessage: state.errorMessage),
           );
         } else {
-          return const FeaturedBooksShimmer();
+          return const SliverToBoxAdapter(
+            child: FeaturedBooksShimmer(heightRatio: 0.25),
+          );
         }
       },
     );
