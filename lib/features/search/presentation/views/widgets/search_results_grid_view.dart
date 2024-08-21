@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../../../core/models/book/book.dart';
 import '../../../../../core/widgets/custom_book_image.dart';
 
-class SearchResultListView extends StatelessWidget {
+class SearchResultsGridView extends StatelessWidget {
   final List<Book> searchResults;
 
-  const SearchResultListView({super.key, required this.searchResults});
+  const SearchResultsGridView({super.key, required this.searchResults});
 
   @override
   Widget build(BuildContext context) {
