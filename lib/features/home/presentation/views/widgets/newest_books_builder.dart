@@ -1,8 +1,8 @@
 import 'package:bookly_app/features/home/presentation/views/widgets/newest_books_list_view.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/newest_books_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/widgets/loading_indicator.dart';
 import '../../../../../core/widgets/something_went_wrong.dart';
 import '../../manager/newest_books_cubit/newest_books_cubit.dart';
 
@@ -20,9 +20,7 @@ class NewestBooksBuilder extends StatelessWidget {
             child: SomethingWentWrong(errorMessage: state.errorMessage),
           );
         } else {
-          return const SliverToBoxAdapter(
-            child: LoadingIndicator(),
-          );
+          return const NewestBooksShimmer();
         }
       },
     );
