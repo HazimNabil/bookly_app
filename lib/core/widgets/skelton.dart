@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Skelton extends StatelessWidget {
-  final double height, width;
+  final double? height, width;
 
-  const Skelton({super.key, required this.height, required this.width});
+  const Skelton({super.key, this.height, this.width});
 
   @override
   Widget build(BuildContext context) {
