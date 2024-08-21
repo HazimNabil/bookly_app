@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/core/widgets/loading_indicator.dart';
 import 'package:bookly_app/core/widgets/something_went_wrong.dart';
 import 'package:bookly_app/features/search/presentation/manager/search_books_cubit/search_books_cubit.dart';
@@ -13,7 +14,17 @@ class SearchResultListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SearchBooksCubit, SearchBooksState>(
       builder: (context, state) {
-        if (state is SearchBooksSuccess) {
+        if (state is SearchBooksInitial) {
+          return const Expanded(
+            child: Center(
+              child: Text(
+                "Type in the title to find the book you're looking for!",
+                style: Styles.textStyle18,
+                textAlign: TextAlign.center,
+              ),
+            ),
+          );
+        } else if (state is SearchBooksSuccess) {
           return Expanded(
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
