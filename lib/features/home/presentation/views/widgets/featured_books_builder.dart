@@ -1,7 +1,7 @@
-import 'package:bookly_app/core/widgets/loading_indicator.dart';
 import 'package:bookly_app/core/widgets/something_went_wrong.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/featured_books_list_view.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/featured_books_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,9 +19,7 @@ class FeaturedBooksBuilder extends StatelessWidget {
             child: SomethingWentWrong(errorMessage: state.errorMessage),
           );
         } else {
-          return const SliverToBoxAdapter(
-            child: LoadingIndicator(),
-          );
+          return const FeaturedBooksShimmer();
         }
       },
     );
