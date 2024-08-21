@@ -3,10 +3,10 @@ import 'package:bookly_app/core/widgets/skelton.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-class FeaturedBooksShimmer extends StatelessWidget {
+class HorizontalListShimmer extends StatelessWidget {
   final double heightRatio;
 
-  const FeaturedBooksShimmer({super.key, required this.heightRatio});
+  const HorizontalListShimmer({super.key, required this.heightRatio});
 
   @override
   Widget build(BuildContext context) {
