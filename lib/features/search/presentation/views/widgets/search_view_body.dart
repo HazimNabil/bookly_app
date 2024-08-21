@@ -8,14 +8,14 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.0),
       child: Column(
         children: [
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
           SearchField(),
-          const SizedBox(height: 30),
-          const SearchResultListView(),
+          SizedBox(height: 30),
+          SearchResultListView(),
         ],
       ),
     );

@@ -30,12 +30,14 @@ class SearchResultListView extends StatelessWidget {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
               ),
+              itemCount: state.searchResults.length,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.only(bottom: 12.0),
+                var thumbnail =
+                    state.searchResults[index].volumeInfo.imageLinks?.thumbnail;
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 12.0),
                   child: CustomBookImage(
-                    imageUrl:
-                        'http://books.google.com/books/content?id=_ZoWwQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
+                    imageUrl: thumbnail ?? '',
                   ),
                 );
               },
