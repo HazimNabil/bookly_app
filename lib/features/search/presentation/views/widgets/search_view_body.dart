@@ -1,7 +1,6 @@
 import 'package:bookly_app/features/search/presentation/views/widgets/search_field.dart';
+import 'package:bookly_app/features/search/presentation/views/widgets/search_results_builder.dart';
 import 'package:flutter/material.dart';
-
-import 'search_result_list_view.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -15,7 +14,7 @@ class SearchViewBody extends StatelessWidget {
           SizedBox(height: 20),
           SearchField(),
           SizedBox(height: 30),
-          SearchResultListView(),
+          SearchResultsBuilder(),
         ],
       ),
     );
