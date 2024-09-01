@@ -39,12 +39,6 @@ class _BookDetailsViewState extends State<BookDetailsView> {
         onPressed: () => context.pop(),
         icon: const Icon(Icons.close),
       ),
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.shopping_cart_outlined),
-        )
-      ],
     );
   }
 }
