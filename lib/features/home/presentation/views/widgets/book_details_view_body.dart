@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   final Book book;
+
   const BookDetailsViewBody({super.key, required this.book});
 
   @override
@@ -17,8 +18,11 @@ class BookDetailsViewBody extends StatelessWidget {
           BookDetailsSection(book: book),
           const SizedBox(height: 30),
           BookAction(previewUrl: book.volumeInfo.previewLink),
-          const SizedBox(height: 40),
+          const Expanded(
+            child: SizedBox(),
+          ),
           const SimilarBooksSection(),
+          const SizedBox(height: 40)
         ],
       ),
     );
